@@ -236,11 +236,11 @@ class COCOeval:
         """
         p = self.params
 
-        gt = self.gt_dataset.get_instances([imgId], [catId] if p.useCats else p.catIds, bool(p.useCats))[0][
+        gt = self.gt_dataset.get_instances([int(imgId)], [int(catId)] if p.useCats else p.catIds, bool(p.useCats))[0][
             0
         ]  # 1 imgId  1 catId
 
-        dt = self.dt_dataset.get_instances([imgId], [catId] if p.useCats else p.catIds, bool(p.useCats))[0][
+        dt = self.dt_dataset.get_instances([int(imgId)], [int(catId)] if p.useCats else p.catIds, bool(p.useCats))[0][
             0
         ]  # 1 imgId  1 catId
 
