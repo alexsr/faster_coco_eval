@@ -35,9 +35,9 @@ class COCOeval_faster(COCOevalBase):
 
         self.print_function(f"Evaluate annotation type *{p.iouType}*")
 
-        p.imgIds = list(np.unique(p.imgIds))
+        p.imgIds = [int(x) for x in list(np.unique(p.imgIds))]
         if p.useCats:
-            p.catIds = list(np.unique(p.catIds))
+            p.catIds = [int(x) for x in list(np.unique(p.catIds))]
         p.maxDets = sorted(p.maxDets)
         self.params = p
 
